@@ -1,0 +1,74 @@
+@import "../@themes/variables";
+@import "../@themes/mixins";
+
+$primary-color: theme-var($--mag-primary);
+$secondary-color: theme-var($--theme-secondary);
+$background-color: #e0fbfc;
+
+$sub-color: #ee6c4d;
+$main-color: #293241;
+
+$black: #000;
+$grey: #424242;
+
+
+.main-layout {
+    display: flex;
+    position: absolute;
+    height: 100%;
+    width: 100%;
+
+    mag-ui-menu-bar {
+        display: flex;
+    }
+
+    .view-layout {
+        flex-grow: 1;
+        display: flex;
+        flex-direction: column;
+
+        @media only screen and (max-width: 768px) {
+            display: none;
+        }
+
+        &.full {
+            @media only screen and (max-width: 768px) {
+                display: block;
+            }
+            border-radius: theme-var($--mag-border-radius);
+        }
+
+        .header {
+            position: relative;
+            background: theme-var($--mag-default-background);
+            box-shadow: 1px 1px 10px 1px #ccc;
+            min-height: 50px;
+            padding: 5px 10px;
+            margin: 0 0 5px 4px;
+            border-radius: 0 0 0 theme-var($--mag-border-radius);
+            display: flex;
+            align-items: center;
+        }
+
+        .content {
+            margin-left: 10px;
+            overflow: auto;
+            flex-grow: 1;
+            display: flex;
+            flex-direction: column;
+        
+            .main-content {
+                padding: 5px;
+                flex-grow: 1;
+            }
+        }
+
+        .nav-footer-content {
+            background: linear-gradient(#2989d8 0%, #329cec 100%);
+            min-height: 35px;
+            margin: 10px 0 0;
+            border-radius: theme-var($--mag-border-radius) 0 0 0;
+        }
+    }
+}
+

@@ -1,0 +1,175 @@
+@import "/src/components/@themes/mixins";
+@import "/src/components/@themes/variables";
+
+.menu-container {
+    width: 260px;
+    position: relative;
+
+    -moz-transition: width .35s;
+    -ms-transition: width .35s;
+    -o-transition: width .35s;
+    -webkit-transition: width .35s;
+    transition: width .35s;
+
+    display: flex;
+    height: 100%;
+    flex-direction: column;
+
+    .menu-content {
+        background: theme-var($--mag-default-background);
+        box-shadow: 1px 1px 10px 3px #ccc;
+
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        border-bottom-right-radius: theme-var($--mag-border-radius);
+        border-top-right-radius: theme-var($--mag-border-radius);
+    }
+
+    .collapse-button {
+        display: none;
+
+        @media only screen and (max-width: 768px) {
+            display: block;
+        }
+    }
+
+    @media only screen and (max-width: 768px) {
+        width: 100vw;
+        border-radius: theme-var($--mag-border-radius);
+    }
+}
+
+.menu-container.hide {
+    width: 100px;
+    margin: 0;
+
+    .menu-header {
+        .menu-header-name {
+            display: none;
+        }
+    }
+
+    .menu-items .menu-item {
+        .menu-item-header {
+            .menu-header-text {
+                display: none;
+            }
+        }
+
+        .menu-item-children {
+            display: none;
+        }
+    }
+}
+
+.menu-header {
+    display: flex;
+    transition: all .2s ease;
+    background: theme-var($--mag-primary);
+
+    color: white; //todo
+    box-shadow: 1px 1px 15px -1px #ccc;
+    margin: 10px;
+    border-radius: theme-var($--mag-border-radius);
+    align-items: center;
+    justify-content: space-evenly;
+    min-height: 50px;
+
+    cursor: pointer;
+    user-select: none;
+
+    .menu-header-logo {
+        img {
+            max-height: 55px;
+            max-width: 55px;
+            vertical-align: middle;
+        }
+        padding: 5px 0;
+    }
+
+    .menu-header-name {
+        text-transform: capitalize;
+        font-size: 18px;
+    }
+    
+    .menu-toggler {
+        &.toggle {
+            transform: rotate(180deg);
+        } 
+        transition: all .2s ease;
+    }
+}
+
+.menu-items {
+    flex-grow: 1;
+    overflow: scroll;
+    .menu-item {
+        display: flex;
+        min-height: 30px;
+        margin: 5px 10px;
+        border-radius: theme-var($--mag-border-radius);
+        user-select: none;
+        cursor: pointer;
+        flex-direction: column;
+        padding: 5px 10px;
+        opacity: 60%;
+
+        border: 1px solid transparent;
+        border-left: 4px solid transparent;
+
+        &:hover {
+            border: 1px solid rgba(128, 128, 128, 0.219);
+            border-left: 4px solid theme-var($--mag-primary);
+            opacity: 100%;
+        }
+
+        &.active {
+            opacity: 100%;
+            border: 1px solid rgba(128, 128, 128, 0.219);
+            border-left: 4px solid theme-var($--mag-control-activate);
+
+            &.child {
+                .menu-item-children {
+                    display: block;
+                }
+            }
+        }
+
+
+
+        .menu-item-header {
+            padding: 5px 10px;
+        }
+        
+        .menu-item-children {
+            display: none;
+            
+            .menu-item-child {
+                margin: 10px;
+                padding: 5px 10px;
+                border: 1px solid transparent;
+                border-left: 3px solid transparent;
+                opacity: 60%;
+
+                &:hover {
+                    border: 1px solid rgba(128, 128, 128, 0.219);
+                    border-radius: theme-var($--mag-border-radius);
+                    border-left: 3px solid theme-var($--mag-primary);
+                    border-top-left-radius: 0;
+                    border-bottom-left-radius: 0;
+                    opacity: 100%;
+                }
+
+                &.active {
+                    border: 1px solid rgba(128, 128, 128, 0.219);
+                    border-radius: theme-var($--mag-border-radius);
+                    border-left: 3px solid theme-var($--mag-control-activate);
+                    border-top-left-radius: 0;
+                    border-bottom-left-radius: 0;
+                    opacity: 100%;
+                }
+            }
+        }
+    }
+}

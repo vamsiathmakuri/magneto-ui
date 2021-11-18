@@ -1,0 +1,62 @@
+<div class="menu-container" [class.hide]="showNav">
+    <div class="menu-content">
+        <!-- <div  (click)="toggleNav()">
+            <button>Collapse</button>
+        </div> -->
+        <div class="menu-header" (click)="toggleNav()" >
+            <div class="menu-header-logo">
+                <img src="/assets/logo.png" alt="">
+            </div>
+
+            <div class="menu-header-name">
+                Magneto UI
+            </div>
+
+            <svg class="menu-toggler" [class.toggle]="!showNav" width="20px" height="20px" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <rect width="48" height="48" />
+                <path d="M19 12L31 24L19 36" stroke="white" stroke-width="4" stroke-linecap="round"
+                    stroke-linejoin="round" />
+            </svg>
+        </div>
+        <div class="menu-profile">
+
+        </div>
+        <div class="menu-items">
+            <div class="menu-item active">
+                <div class="menu-item-header">
+                    <span></span>
+                    <span class="menu-header-text">Dashboard</span>
+                </div>
+            </div>
+            <div class="menu-item child active">
+                <div class="menu-item-header">
+                    <span></span>
+                    <span class="menu-header-text">Items</span>
+                </div>
+                <div class="menu-item-children">
+                    <div class="menu-item-child active">
+                        Child Item 1
+                    </div>
+                    <div class="menu-item-child">
+                        Child Item 1
+                    </div>
+                    <div class="menu-item-child">
+                        Child Item 1
+                    </div>
+                </div>
+            </div>
+            <div class="menu-item">
+                <div class="menu-item-header">
+                    <span></span>
+                    <span class="menu-header-text">Basic Text </span>
+                </div>
+            </div>
+            <div class="menu-item" *ngFor="let item of [1]">
+                <div class="menu-item-header">
+                    <span></span>
+                    <span class="menu-header-text">About</span>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
