@@ -1,26 +1,11 @@
 @import "../@themes/variables";
 @import "../@themes/mixins";
 
-$primary-color: theme-var($--mag-primary);
-$secondary-color: theme-var($--theme-secondary);
-$background-color: #e0fbfc;
-
-$sub-color: #ee6c4d;
-$main-color: #293241;
-
-$black: #000;
-$grey: #424242;
-
-
 .main-layout {
     display: flex;
     position: absolute;
     height: 100%;
     width: 100%;
-
-    mag-ui-menu-bar {
-        display: flex;
-    }
 
     .view-layout {
         flex-grow: 1;

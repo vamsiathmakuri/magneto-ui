@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { MagMenuService } from './components/menu-bar/menu-bar.service';
 
 @Component({
     selector: 'mag-layout',
@@ -7,7 +8,7 @@ import { Component, OnInit } from '@angular/core';
 })
 export class LayoutComponent implements OnInit {
     
-    constructor() { }
+    constructor(public menuService: MagMenuService) { }
     
     ngOnInit() { }
 }

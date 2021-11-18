@@ -1,6 +1,7 @@
 import { CommonModule } from '@angular/common';
 import { NgModule } from '@angular/core';
 import { MenuBarComponent } from './components/menu-bar/menu-bar.component';
+import { MagMenuService } from './components/menu-bar/menu-bar.service';
 
 import { LayoutComponent } from './layout.component';
 import { LayoutService } from './layout.service';
@@ -17,7 +18,8 @@ import { LayoutService } from './layout.service';
         MenuBarComponent
     ],
     providers: [
-        LayoutService
+        LayoutService,
+        MagMenuService
     ],
 })
 export class MagLayoutModule { }

@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { MagMenuService } from './menu-bar.service';
 
 @Component({
     selector: 'mag-ui-menu-bar',
@@ -7,12 +8,13 @@ import { Component, OnInit } from '@angular/core';
 })
 
 export class MenuBarComponent implements OnInit {
-    constructor() { }
+    constructor(public menuService: MagMenuService) { }
 
-    ngOnInit() { }
+    ngOnInit() {
+        this.menuService.menuStatus.subscribe(data => {
+            this.showNav = data;
+        });
+    }
 
     showNav: boolean = false;
-    toggleNav() {
-        this.showNav = !this.showNav;
-    }
 }
