@@ -27,10 +27,11 @@
             position: relative;
             background: theme-var($--mag-default-background);
             box-shadow: 1px 1px 10px 1px #ccc;
-            min-height: 50px;
-            padding: 5px 10px;
-            margin: 0 0 5px 4px;
-            border-radius: 0 0 0 theme-var($--mag-border-radius);
+            min-height: 60px;
+            margin: 10px;
+            border-radius: theme-var($--mag-border-radius);
+            border: 1px solid rgba(0, 0, 0, 0.199);
+            padding: 0 10px;
             display: flex;
             align-items: center;
         }
