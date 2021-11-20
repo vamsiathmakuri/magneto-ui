@@ -1,12 +1,11 @@
 {
   "name": "magneto-ui",
-  "version": "0.0.0",
+  "version": "0.1.0-alpha",
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
-    "build": "ng build",
-    "watch": "ng build --watch --configuration development",
-    "test": "ng test"
+    "build": "npx ng build --prod --output-path dist --base-href /magneto/",
+    "source-map-explorer": "ng build --prod --source-map && npx source-map-explorer dist/magneto-ui/*.js"
   },
   "private": true,
   "dependencies": {
