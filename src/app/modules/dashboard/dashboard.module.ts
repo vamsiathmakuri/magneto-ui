@@ -1,7 +1,8 @@
 import { NgModule } from '@angular/core';
 import { RouterModule } from '@angular/router';
 import { MagLayoutModule } from 'src/components/layout/layout.module';
-import { HomeComponent } from '../home/home.component';
+import { UnderConstructionComponent } from './components/construction/construction.component';
+import { HomeComponent } from './components/home/home.component';
 
 import { DashboardComponent } from './dashboard.component';
 
@@ -11,14 +12,20 @@ import { DashboardComponent } from './dashboard.component';
             path: '',
             component: DashboardComponent,
             children: [{
+                path: '',
+                component: HomeComponent,
+            }, {
                 path: '**',
-                component: HomeComponent
+                component: UnderConstructionComponent
             }]
         }]),
         MagLayoutModule
     ],
     exports: [],
-    declarations: [DashboardComponent],
+    declarations: [
+        DashboardComponent,
+        UnderConstructionComponent
+    ],
     providers: [],
 })
 export class DashboardModule { }
