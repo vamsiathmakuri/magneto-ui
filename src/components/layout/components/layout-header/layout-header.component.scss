@@ -1,0 +1,160 @@
+@import "../../../@themes/variables";
+@import "../../../@themes/mixins";
+
+.header {
+    margin: 10px;
+    
+    .profile {
+        background: theme-var($--mag-default-background);
+        box-shadow: 1px 1px 10px 1px #ccc;
+        border-radius: theme-var($--mag-border-radius);
+        border: 1px solid rgba(0, 0, 0, 0.199);
+        display: flex;
+        align-items: center;
+        position: relative;
+
+        .menu-toggle {
+            padding: 0px 15px;
+            user-select: none;
+            cursor: pointer;
+            display: none;
+            @media only screen and (max-width: 768px) {
+                display: block;
+            }
+
+            &:hover {
+                box-shadow: 1px 1px 10px 1px #ccc;
+                border-radius: theme-var($--mag-border-radius);
+            }
+        }
+
+        .seperator {
+            flex-grow: 1;
+
+            @media only screen and (max-width: 768px) {
+                display: none;
+            }
+        }
+
+        .search {
+            display: flex;
+            padding: 10px;
+            justify-content: flex-end;
+            align-items: center;
+            position: relative;
+            @media only screen and (max-width: 768px) {
+                flex-grow: 1;
+
+                input {
+                    width: 100%;
+                }
+            }
+            input {
+                transition: all 0.7s ease;
+                max-width: 0;
+                padding: 0;
+                margin: 0;
+                border: unset;
+                background: transparent;
+                border-radius: theme-var($--mag-border-radius);
+            }
+            svg {
+                right: 10px;
+                height: 20px;
+                padding: 6px 10px;
+                cursor: pointer;
+
+                &:hover {
+                    box-shadow: 1px 1px 10px 1px #ccc;
+                    border-radius: theme-var($--mag-border-radius);
+                }
+            }
+        }
+
+        .search.active {
+            padding: 9px;
+            input {
+                padding: 0 35px 0 10px;
+                margin: 1px;
+                height: 30px;
+                max-width: 400px;
+                visibility: visible;
+                border: 1px solid rgba(0, 0, 0, 0.199);
+            }
+
+            svg {
+                position: absolute;
+            }
+        }
+
+        .profile-image {
+            width: 40px;
+            height: 40px;
+            border: 1px solid black;
+            border-radius: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin: 5px 15px 5px 0;
+            cursor: pointer;
+            user-select: none;
+
+            &:hover {
+                box-shadow: 1px 1px 10px 1px #ccc;
+            }
+        }
+
+        @keyframes growDown {
+            0% {
+              transform: scaleY(0)
+            }
+            100% {
+              transform: scaleY(1)
+            }
+        }
+
+        .header-options {
+            position: absolute;
+            right: 0;
+            top: calc(100% + 5px);
+            box-shadow: 1px 1px 10px 3px #ccc;
+            border: 1px solid rgba(0, 0, 0, 0.199);
+            background: white; //todo
+            border-radius: theme-var($--mag-border-radius);
+            padding: 10px;
+            width: max-content;
+            display: none;
+            animation: growDown 100ms ease;
+            transform-origin: top;
+
+            &.active {
+                display: flex;
+                flex-direction: column;
+            }
+
+            .header-option {
+                padding: 5px 15px;
+                margin: 4px 2px;
+                border: 1px solid rgba(0, 0, 0, 0.199);
+                border-radius: theme-var($--mag-border-radius);
+                user-select: none;
+                cursor: pointer;
+                opacity: 80%;
+                display: flex;
+                align-items: center;
+                justify-content: flex-end;
+
+
+                img {
+                    height: 20px;
+                    padding: 0 10px;
+                }
+
+                &:hover {
+                    opacity: 100%;
+                    box-shadow: inset 0px 0px 8px 2px #ccc;
+                }
+            }
+        }
+    }
+}
