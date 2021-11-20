@@ -59,19 +59,24 @@ export class DashboardComponent implements OnInit {
             iconURL: 'https://www.svgrepo.com/show/356121/users-three.svg',
             children: [{
                 name: 'Item 1'+index,
-                path: '/items/1'
+                iconURL: 'https://www.svgrepo.com/show/356113/tablet.svg',
+                path: '/items/1'+index
             }, {
                 name: 'Item 2'+index,
-                path: '/items/2'
+                iconURL: 'https://www.svgrepo.com/show/356113/tablet.svg',
+                path: '/items/2'+index
             }, {
                 name: 'Item 3'+index,
-                path: '/items/3'
+                iconURL: 'https://www.svgrepo.com/show/356113/tablet.svg',
+                path: '/items/3'+index
             }, {
                 name: 'Item 4'+index,
-                path: '/items/4'
+                iconURL: 'https://www.svgrepo.com/show/356113/tablet.svg',
+                path: '/items/4'+index
             }, {
                 name: 'Item 5'+index,
-                path: '/items/5'
+                iconURL: 'https://www.svgrepo.com/show/356113/tablet.svg',
+                path: '/items/5'+index
             }]
         }
     })];

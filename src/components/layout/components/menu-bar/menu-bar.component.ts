@@ -46,8 +46,6 @@ export class MenuBarComponent implements OnInit, OnDestroy {
         this.parentItem = item;
         if(!item.children?.length) {
             this.router.navigate([item.path]);
-        } else {
-            this.menuService.open();
         }
     }
 
