@@ -9,7 +9,6 @@ import { MenuBarItem } from './layout.models';
 })
 export class LayoutComponent implements OnInit {
     contentStatus: boolean = false;
-    showContentEvent: any;
 
     @Input() menuItems: MenuBarItem[] = [];
     
@@ -19,15 +18,7 @@ export class LayoutComponent implements OnInit {
     
     ngOnInit() {
         this.menu.menuStatus.subscribe(data => {
-
-            clearInterval(this.showContentEvent);
-            if(!data) {
-                this.showContentEvent = setTimeout(() => {
-                    this.contentStatus = !data;
-                }, 220);
-            } else {
-                this.contentStatus = !data;
-            }
+            this.contentStatus = !data;
         });
     }
 }

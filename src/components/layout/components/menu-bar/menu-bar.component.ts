@@ -12,7 +12,6 @@ import { Subscription } from 'rxjs';
 
 export class MenuBarComponent implements OnInit, OnDestroy {
     showNav: boolean = true;
-    showText: boolean = true;
     hideTextEvent: any;
 
     @Input() items: MenuBarItem[] = [];
@@ -48,15 +47,7 @@ export class MenuBarComponent implements OnInit, OnDestroy {
 
         this.subscriptions.push(
             this.service.menuStatus.subscribe(data => {
-                clearInterval(this.hideTextEvent);
                 this.showNav = data;
-                if(this.showNav) {
-                    this.hideTextEvent = setTimeout(() => {
-                        this.showText = data;
-                    }, 150);
-                } else {
-                    this.showText = data;
-                }
             })
         )
     }
