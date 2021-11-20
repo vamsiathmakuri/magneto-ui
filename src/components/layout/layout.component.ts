@@ -8,17 +8,26 @@ import { MenuBarItem } from './layout.models';
     styleUrls: ['layout.component.scss']
 })
 export class LayoutComponent implements OnInit {
-    menuStatus: boolean;
+    contentStatus: boolean = false;
+    showContentEvent: any;
 
     @Input() menuItems: MenuBarItem[] = [];
     
-    constructor(public menuService: MagMenuService) {
-        this.menuStatus = this.menuService.menuStatus.value
+    constructor(public menu: MagMenuService) {
+        this.contentStatus = this.menu.menuStatus.value
     }
     
     ngOnInit() {
-        this.menuService.menuStatus.subscribe(data => {
-            this.menuStatus = data;
+        this.menu.menuStatus.subscribe(data => {
+
+            clearInterval(this.showContentEvent);
+            if(!data) {
+                this.showContentEvent = setTimeout(() => {
+                    this.contentStatus = !data;
+                }, 220);
+            } else {
+                this.contentStatus = !data;
+            }
         });
     }
 }

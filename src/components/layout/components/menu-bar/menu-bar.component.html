@@ -1,6 +1,6 @@
 <div class="menu-container" [class.hide]="!showNav" [class.hide-text]="!showText">
     <div class="menu-content">
-        <div class="menu-header" (click)="menuService.toggle()">
+        <div class="menu-header" (click)="service.toggle()">
             <div class="menu-header-logo">
                 <img src="/assets/logo.png" alt="">
             </div>
@@ -9,18 +9,15 @@
                 Magneto UI
             </div>
         </div>
-        <div class="menu-profile">
-            
-        </div>
         <div class="menu-items">
             <ng-container *ngFor="let item of items">
                 <div class="menu-item" [class.child]="item.children?.length" [class.active]="item === parentItem">
-                    <div class="menu-item-header" [title]="item.name" (click)="itemOnClick(item)">
+                    <div class="menu-item-header" [title]="item.name" (click)="item !== parentItem && itemOnClick(item)">
                         <img class="menu-header-icon" [src]="item.iconURL" alt="">
                         <span class="menu-header-text">{{ item.name }}</span>
                     </div>
                     <div class="menu-item-children" *ngIf="item.children?.length">
-                        <div class="menu-item-child menu-item-header" [title]="child.name" *ngFor="let child of item.children" (click)="itemOnClick(child)" [class.active]="child === childItem">
+                        <div class="menu-item-child menu-item-header" [title]="child.name" *ngFor="let child of item.children" (click)="child !== childItem && itemOnClick(child)" [class.active]="child === childItem">
                             <img class="menu-header-icon" [src]="child.iconURL" alt="">
                             <span class="menu-header-text">{{ child.name }}</span>
                         </div>

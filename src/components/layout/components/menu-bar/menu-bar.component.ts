@@ -32,7 +32,7 @@ export class MenuBarComponent implements OnInit, OnDestroy {
     }
 
     constructor(
-        public menuService: MagMenuService,
+        public service: MagMenuService,
         private router: Router
     ) { }
 
@@ -47,7 +47,7 @@ export class MenuBarComponent implements OnInit, OnDestroy {
         );
 
         this.subscriptions.push(
-            this.menuService.menuStatus.subscribe(data => {
+            this.service.menuStatus.subscribe(data => {
                 clearInterval(this.hideTextEvent);
                 this.showNav = data;
                 if(this.showNav) {

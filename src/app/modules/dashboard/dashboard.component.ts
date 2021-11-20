@@ -21,23 +21,23 @@ export class DashboardComponent implements OnInit {
         iconURL: 'https://www.svgrepo.com/show/356121/users-three.svg',
         children: [{
             name: 'Item 1',
-            iconURL: 'https://www.svgrepo.com/show/356113/tablet.svg',
+            iconURL: 'https://www.svgrepo.com/show/380183/telescope-astronomy-space-planet-spaceship.svg',
             path: '/items/1'
         }, {
             name: 'Item 2',
-            iconURL: 'https://www.svgrepo.com/show/356113/tablet.svg',
+            iconURL: 'https://www.svgrepo.com/show/380188/buildingbank-building-bank-money.svg',
             path: '/items/2'
         }, {
             name: 'Item 3',
-            iconURL: 'https://www.svgrepo.com/show/356113/tablet.svg',
+            iconURL: 'https://www.svgrepo.com/show/380196/eating-placesreservation-food-restaurant.svg',
             path: '/items/3'
         }, {
             name: 'Item 4',
-            iconURL: 'https://www.svgrepo.com/show/356113/tablet.svg',
+            iconURL: 'https://www.svgrepo.com/show/380204/pharmacy-shop-store-cart-shopping.svg',
             path: '/items/4'
         }, {
             name: 'Item 5',
-            iconURL: 'https://www.svgrepo.com/show/356113/tablet.svg',
+            iconURL: 'https://www.svgrepo.com/show/380189/buildingcinema-cinema-movie-film.svg',
             path: '/items/5'
         }]
     }, {
@@ -86,6 +86,6 @@ export class DashboardComponent implements OnInit {
     ngOnInit() { }
 
     toggle() {
-        this.layout.menuService.toggle();
+        this.layout.menu.toggle();
     }
 }

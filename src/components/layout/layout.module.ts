@@ -1,6 +1,7 @@
 import { CommonModule } from '@angular/common';
 import { NgModule } from '@angular/core';
 import { RouterModule } from '@angular/router';
+import { LayoutHeaderComponent } from './components/layout-header/layout-header.component';
 import { MenuBarComponent } from './components/menu-bar/menu-bar.component';
 import { MagMenuService } from './components/menu-bar/menu-bar.service';
 
@@ -17,7 +18,8 @@ import { LayoutService } from './layout.service';
     ],
     declarations: [
         LayoutComponent,
-        MenuBarComponent
+        MenuBarComponent,
+        LayoutHeaderComponent
     ],
     providers: [
         LayoutService,
