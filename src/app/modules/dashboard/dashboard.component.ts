@@ -1,4 +1,4 @@
-import { Component, OnInit, ViewChild } from '@angular/core';
+import { Component, OnInit, ViewChild, ɵɵngDeclareClassMetadata } from '@angular/core';
 import { LayoutComponent } from 'src/components/layout/layout.component';
 import { MenuBarItem } from 'src/components/layout/layout.models';
 
@@ -12,74 +12,118 @@ export class DashboardComponent implements OnInit {
     @ViewChild(LayoutComponent) layout!: LayoutComponent;
 
     menuItems: MenuBarItem[] = [{
-        name: 'Dashboard',
-        path: '/dashboard',
-        iconURL: 'https://www.svgrepo.com/show/356113/tablet.svg'
+        name: 'Welcome',
+        path: '/',
+        iconURL: 'https://www.svgrepo.com/show/356325/heart.svg'
     }, {
-        name: 'Items',
-        path: '/items',
-        iconURL: 'https://www.svgrepo.com/show/356121/users-three.svg',
+        name: 'Setup',
+        path: '/setup',
+        iconURL: 'https://www.svgrepo.com/show/356335/logout.svg'
+    }, {
+        name: 'Themes',
+        path: '/themes',
+        iconURL: 'https://www.svgrepo.com/show/356334/lamp.svg'
+    }, {
+        name: 'Icons',
+        path: '/icons',
+        iconURL: 'https://www.svgrepo.com/show/356320/emoji-smile.svg'
+    }, {
+        name: 'Layout',
+        iconURL: 'https://www.svgrepo.com/show/356293/category-1.svg',
         children: [{
-            name: 'Item 1',
-            iconURL: 'https://www.svgrepo.com/show/380183/telescope-astronomy-space-planet-spaceship.svg',
-            path: '/items/1'
+            name: 'Dashboard',
+            iconURL: 'https://www.svgrepo.com/show/356296/chart-square.svg',
+            path: '/layout/dashboard'
         }, {
-            name: 'Item 2',
-            iconURL: 'https://www.svgrepo.com/show/380188/buildingbank-building-bank-money.svg',
-            path: '/items/2'
+            name: 'Card',
+            iconURL: 'https://www.svgrepo.com/show/356345/note.svg',
+            path: '/layout/card'
         }, {
-            name: 'Item 3',
-            iconURL: 'https://www.svgrepo.com/show/380196/eating-placesreservation-food-restaurant.svg',
-            path: '/items/3'
+            name: 'Accordion',
+            iconURL: 'https://www.svgrepo.com/show/356359/scan.svg',
+            path: '/layout/accordion'
         }, {
-            name: 'Item 4',
-            iconURL: 'https://www.svgrepo.com/show/380204/pharmacy-shop-store-cart-shopping.svg',
-            path: '/items/4'
+            name: 'Tabs',
+            iconURL: 'https://www.svgrepo.com/show/356313/drawer-add.svg',
+            path: '/layout/tabs'
         }, {
-            name: 'Item 5',
-            iconURL: 'https://www.svgrepo.com/show/380189/buildingcinema-cinema-movie-film.svg',
-            path: '/items/5'
+            name: 'List',
+            iconURL: 'https://www.svgrepo.com/show/356303/clipboard-text.svg',
+            path: '/layout/list'
+        }, {
+            name: 'Stepper',
+            iconURL: 'https://www.svgrepo.com/show/356374/tick-square.svg',
+            path: '/layout/stepper'
         }]
     }, {
-        name: 'Basic Tab',
-        iconURL: 'https://www.svgrepo.com/show/356111/store.svg',
-        path: '/basic-tab'
+        name: 'Forms',
+        iconURL: 'https://www.svgrepo.com/show/356306/copy.svg',
+        children: [{
+            name: 'Input',
+            iconURL: 'https://www.svgrepo.com/show/356316/edit.svg',
+            path: '/forms/input'
+        }, {
+            name: 'Buttons',
+            iconURL: 'https://www.svgrepo.com/show/356310/direct-left.svg',
+            path: '/forms/buttons'
+        }, {
+            name: 'Select',
+            iconURL: 'https://www.svgrepo.com/show/356360/row.svg',
+            path: '/forms/select'
+        }, {
+            name: 'Radio',
+            iconURL: 'https://www.svgrepo.com/show/356372/tick-circle.svg',
+            path: '/forms/radio'
+        }, {
+            name: 'Checkbox',
+            iconURL: 'https://www.svgrepo.com/show/356374/tick-square.svg',
+            path: '/forms/checkbox'
+        }, {
+            name: 'Date & Time Picker',
+            iconURL: 'https://www.svgrepo.com/show/356291/calendar.svg',
+            path: '/forms/date-picker'
+        }, {
+            name: 'Chips',
+            iconURL: 'https://www.svgrepo.com/show/356332/lable.svg',
+            path: '/forms/chips'
+        }, {
+            name: 'Slider',
+            iconURL: 'https://www.svgrepo.com/show/356369/slider.svg',
+            path: '/forms/slider'
+        }]
     }, {
-        name: 'Extra Tab 1',
-        iconURL: 'https://www.svgrepo.com/show/356156/envelope.svg',
-        path: '/etab-1'
+        name: 'Data',
+        iconURL: 'https://www.svgrepo.com/show/356343/movie.svg',
+        children: [{
+            name: 'Table',
+            iconURL: 'https://www.svgrepo.com/show/356344/movie-1.svg',
+            path: '/data/table'
+        }, {
+            name: 'Picker',
+            iconURL: 'https://www.svgrepo.com/show/356307/column.svg',
+            path: '/data/picker'
+        }]
     }, {
-        name: 'Extra Tab 2',
-        iconURL: 'https://www.svgrepo.com/show/356150/coupon.svg',
-        path: '/etab-2'
-    }, ...new Array(0).fill(1).map((data, index) => {
-        return {
-            name: 'Auto Items ' + index,
-            path: '/autoitems',
-            iconURL: 'https://www.svgrepo.com/show/356121/users-three.svg',
-            children: [{
-                name: 'Item 1'+index,
-                iconURL: 'https://www.svgrepo.com/show/356113/tablet.svg',
-                path: '/items/1'+index
-            }, {
-                name: 'Item 2'+index,
-                iconURL: 'https://www.svgrepo.com/show/356113/tablet.svg',
-                path: '/items/2'+index
-            }, {
-                name: 'Item 3'+index,
-                iconURL: 'https://www.svgrepo.com/show/356113/tablet.svg',
-                path: '/items/3'+index
-            }, {
-                name: 'Item 4'+index,
-                iconURL: 'https://www.svgrepo.com/show/356113/tablet.svg',
-                path: '/items/4'+index
-            }, {
-                name: 'Item 5'+index,
-                iconURL: 'https://www.svgrepo.com/show/356113/tablet.svg',
-                path: '/items/5'+index
-            }]
-        }
-    })];
+        name: 'Alerts & Overlays',
+        iconURL: 'https://www.svgrepo.com/show/356305/clock.svg',
+        children: [{
+            name: 'Dialog',
+            iconURL: 'https://www.svgrepo.com/show/356317/drawer-done.svg',
+            path: '/overlay/dialog'
+        }, {
+            name: 'Popover',
+            iconURL: 'https://www.svgrepo.com/show/356353/qustion-circle.svg',
+            path: '/overlay/popover'
+        }, {
+            name: 'Toast Message',
+            iconURL: 'https://www.svgrepo.com/show/356367/shield-done.svg',
+            path: '/overlay/toast'
+        }, {
+            name: 'Alerts',
+            iconURL: 'https://www.svgrepo.com/show/356384/volume-low.svg',
+            path: '/overlay/alert'
+        }]
+    }];
 
     constructor() { }
 

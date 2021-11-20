@@ -106,6 +106,7 @@
 
 .menu-items {
     flex-grow: 1;
+    overflow: auto;
 }
 
 .menu-item {
@@ -183,6 +184,10 @@
 
             &.menu-item-header {
                 min-height: 40px;
+            }
+
+            .menu-header-icon {
+                height: 25px;
             }
 
             &:hover {
