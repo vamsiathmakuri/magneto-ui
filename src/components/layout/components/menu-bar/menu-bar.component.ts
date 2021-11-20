@@ -11,6 +11,9 @@ import { Subscription } from 'rxjs';
 })
 
 export class MenuBarComponent implements OnInit, OnDestroy {
+    showNav: boolean = true;
+    showText: boolean = true;
+    hideTextEvent: any;
 
     @Input() items: MenuBarItem[] = [];
     
@@ -33,9 +36,29 @@ export class MenuBarComponent implements OnInit, OnDestroy {
         private router: Router
     ) { }
 
-    ngOnDestroy(): void {
-        this.subscriptions.forEach(value => value.unsubscribe());
-        console.log('menu destroyed')
+    ngOnInit() {
+        this.currentURL = this.router.url;
+        this.subscriptions.push(
+            this.router.events.subscribe(event => {
+                if(event instanceof NavigationEnd) {
+                    this.currentURL = event.url
+                }
+            })
+        );
+
+        this.subscriptions.push(
+            this.menuService.menuStatus.subscribe(data => {
+                clearInterval(this.hideTextEvent);
+                this.showNav = data;
+                if(this.showNav) {
+                    this.hideTextEvent = setTimeout(() => {
+                        this.showText = data;
+                    }, 150);
+                } else {
+                    this.showText = data;
+                }
+            })
+        )
     }
 
     redirectTo(path: string[]) {
@@ -49,25 +72,8 @@ export class MenuBarComponent implements OnInit, OnDestroy {
         }
     }
 
-    ngOnInit() {
-
-        this.currentURL = this.router.url;
-        this.subscriptions.push(
-            this.router.events.subscribe(event => {
-                if(event instanceof NavigationEnd) {
-                    this.currentURL = event.url
-                }
-            })
-        );
-
-        this.subscriptions.push(
-            this.menuService.menuStatus.subscribe(data => {
-                this.showNav = data;
-            })
-        )
+    ngOnDestroy(): void {
+        this.subscriptions.forEach(value => value.unsubscribe());
+        console.log('menu destroyed')
     }
-
-
-
-    showNav: boolean = false;
 }
