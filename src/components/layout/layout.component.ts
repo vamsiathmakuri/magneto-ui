@@ -1,5 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 import { MagMenuService } from './components/menu-bar/menu-bar.service';
+import { MenuBarItem } from './layout.models';
 
 @Component({
     selector: 'mag-layout',
@@ -7,8 +8,17 @@ import { MagMenuService } from './components/menu-bar/menu-bar.service';
     styleUrls: ['layout.component.scss']
 })
 export class LayoutComponent implements OnInit {
+    menuStatus: boolean;
+
+    @Input() menuItems: MenuBarItem[] = [];
     
-    constructor(public menuService: MagMenuService) { }
+    constructor(public menuService: MagMenuService) {
+        this.menuStatus = this.menuService.menuStatus.value
+    }
     
-    ngOnInit() { }
+    ngOnInit() {
+        this.menuService.menuStatus.subscribe(data => {
+            this.menuStatus = data;
+        });
+    }
 }

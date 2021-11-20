@@ -8,50 +8,21 @@
             <div class="menu-header-name">
                 Magneto UI
             </div>
-
-            <svg class="menu-toggler" [class.toggle]="!showNav" width="20px" height="20px" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <rect width="48" height="48" />
-                <path d="M19 12L31 24L19 36" stroke="white" stroke-width="4" stroke-linecap="round"
-                    stroke-linejoin="round" />
-            </svg>
         </div>
         <div class="menu-profile">
-
+            
         </div>
         <div class="menu-items">
-            <div class="menu-item active">
+            <div *ngFor="let item of items" (click)="itemOnClick(item)" [class.active]="item === parentItem" class="menu-item" [class.child]="item.children?.length">
                 <div class="menu-item-header">
-                    <span></span>
-                    <span class="menu-header-text">Dashboard</span>
+                    <img class="menu-header-icon" [src]="item.iconURL" alt="">
+                    <span class="menu-header-text">{{ item.name }}</span>
                 </div>
-            </div>
-            <div class="menu-item child active">
-                <div class="menu-item-header">
-                    <span></span>
-                    <span class="menu-header-text">Items</span>
-                </div>
-                <div class="menu-item-children">
-                    <div class="menu-item-child active">
-                        Child Item 1
+                <div class="menu-item-children" *ngIf="item.children?.length">
+                    <div class="menu-item-child menu-item-header" *ngFor="let child of item.children" (click)="itemOnClick(child)" [class.active]="child === childItem">
+                        <img class="menu-header-icon" [src]="child.iconURL" alt="">
+                        <span class="menu-header-text">{{ child.name }}</span>
                     </div>
-                    <div class="menu-item-child">
-                        Child Item 1
-                    </div>
-                    <div class="menu-item-child">
-                        Child Item 1
-                    </div>
-                </div>
-            </div>
-            <div class="menu-item">
-                <div class="menu-item-header">
-                    <span></span>
-                    <span class="menu-header-text">Basic Text </span>
-                </div>
-            </div>
-            <div class="menu-item" *ngFor="let item of [1]">
-                <div class="menu-item-header">
-                    <span></span>
-                    <span class="menu-header-text">About</span>
                 </div>
             </div>
         </div>
