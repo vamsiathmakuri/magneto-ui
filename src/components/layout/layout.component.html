@@ -1,13 +1,14 @@
 <div class="main-layout">
     <mag-ui-menu-bar [items]="menuItems"></mag-ui-menu-bar>
     <div class="view-layout" [class.full]="contentStatus">
-        <mag-ui-layout-header></mag-ui-layout-header>
+        <mag-ui-layout-header [options]="headerOptions" [profileImage]="profileImage" [profileName]="profileName">
+        </mag-ui-layout-header>
         <div class="content">
             <div class="main-content">
                 <ng-content></ng-content>
             </div>
             <div class="nav-footer-content">
-                Made with ❤️ Magneto UI
+                {{ footer }}
             </div>
         </div>
     </div>

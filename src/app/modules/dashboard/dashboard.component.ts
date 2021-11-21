@@ -1,6 +1,6 @@
 import { Component, OnInit, ViewChild, ɵɵngDeclareClassMetadata } from '@angular/core';
 import { LayoutComponent } from 'src/components/layout/layout.component';
-import { MenuBarItem } from 'src/components/layout/layout.models';
+import { HeaderOption, MenuBarItem } from 'src/components/layout/layout.models';
 
 @Component({
     selector: 'mag-dashboard',
@@ -143,6 +143,17 @@ export class DashboardComponent implements OnInit {
             iconURL: 'https://www.svgrepo.com/show/50491/loading.svg',
             path: '/overlay/loader'
         }]
+    }];
+
+    headerOptions: HeaderOption[] = [{
+        name: 'Profile',
+        iconURL: 'https://www.svgrepo.com/show/318358/profile.svg'
+    }, {
+        name: 'Dashboard',
+        iconURL: 'https://www.svgrepo.com/show/379132/dashboard.svg'
+    }, {
+        name: 'Logout',
+        iconURL: 'https://www.svgrepo.com/show/132889/logout.svg'
     }];
 
     constructor() { }

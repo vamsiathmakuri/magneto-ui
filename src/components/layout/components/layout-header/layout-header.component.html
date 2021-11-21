@@ -16,26 +16,22 @@
             </svg>
         </div>
         
-        <div class="profile-nav" (clickOutside)="options = false">
-            <div class="profile-image" (click)="options = !options">
-                VA
+        <div class="profile-nav" (clickOutside)="showOptions = false">
+            <div class="profile-image" (click)="showOptions = !showOptions">
+                <ng-container *ngIf="profileImage">
+                    <img [src]="profileImage" alt="">
+                </ng-container>
+                <ng-container *ngIf="_profileShortName && !profileImage">
+                    {{ _profileShortName }}
+                </ng-container>
             </div>
             
-            <div class="header-options" [class.active]="options">
-                <div class="header-option">
-                    My Profile
-                    <img src="https://www.svgrepo.com/show/318358/profile.svg" alt="">
-                </div>
-                <div class="header-option">
-                    My Dashboard
-                    <img src="https://www.svgrepo.com/show/379132/dashboard.svg" alt="">
-                </div>
-                <div class="header-option">
-                    Logout
-                    <img src="https://www.svgrepo.com/show/132889/logout.svg" alt="">
+            <div class="header-options" *ngIf="options?.length" [class.active]="showOptions">
+                <div class="header-option" *ngFor="let option of options">
+                    {{ option.name }}
+                    <img [src]="option.iconURL" alt="">
                 </div>
             </div>
         </div>
-
     </div>
 </div>

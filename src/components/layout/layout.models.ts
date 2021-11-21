@@ -5,3 +5,8 @@ export interface MenuBarItem {
     iconURL?: string;
     children?: MenuBarItem[];
 }
+
+export interface HeaderOption {
+    name: string;
+    iconURL?: string;
+}
