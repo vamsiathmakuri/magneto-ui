@@ -1,6 +1,8 @@
 import { CommonModule } from '@angular/common';
 import { NgModule } from '@angular/core';
 import { RouterModule } from '@angular/router';
+import { MagDirectivesModule } from '../@directives/mag-directives.module';
+import { DeviceService } from '../@generic/services/device.service';
 import { LayoutHeaderComponent } from './components/layout-header/layout-header.component';
 import { MenuBarComponent } from './components/menu-bar/menu-bar.component';
 import { MagMenuService } from './components/menu-bar/menu-bar.service';
@@ -11,7 +13,8 @@ import { LayoutService } from './layout.service';
 @NgModule({
     imports: [
         CommonModule,
-        RouterModule
+        RouterModule,
+        MagDirectivesModule
     ],
     exports: [
         LayoutComponent
@@ -23,7 +26,8 @@ import { LayoutService } from './layout.service';
     ],
     providers: [
         LayoutService,
-        MagMenuService
+        MagMenuService,
+        DeviceService
     ],
 })
 export class MagLayoutModule { }

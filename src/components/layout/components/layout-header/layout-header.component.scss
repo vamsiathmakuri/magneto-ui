@@ -11,7 +11,6 @@
         border: 1px solid rgba(0, 0, 0, 0.199);
         display: flex;
         align-items: center;
-        position: relative;
 
         .menu-toggle {
             padding: 0px 15px;
@@ -85,6 +84,10 @@
             svg {
                 position: absolute;
             }
+        }
+
+        .profile-nav {
+            position: relative;
         }
 
         .profile-image {

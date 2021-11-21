@@ -3,6 +3,7 @@ import { NavigationEnd, Router } from '@angular/router';
 import { MenuBarItem } from '../../layout.models';
 import { MagMenuService } from './menu-bar.service';
 import { Subscription } from 'rxjs';
+import { DeviceService } from 'src/components/@generic/services/device.service';
 
 @Component({
     selector: 'mag-ui-menu-bar',
@@ -15,6 +16,9 @@ export class MenuBarComponent implements OnInit, OnDestroy {
     hideTextEvent: any;
 
     @Input() items: MenuBarItem[] = [];
+    @Input() name: string = 'Magneto UI';
+    @Input() logoUrl: string = '/magneto/assets/logo.png';
+    
     
     private subscriptions: Subscription[] = [];
 
@@ -32,7 +36,8 @@ export class MenuBarComponent implements OnInit, OnDestroy {
 
     constructor(
         public service: MagMenuService,
-        private router: Router
+        private router: Router,
+        public deviceService: DeviceService
     ) { }
 
     ngOnInit() {
@@ -60,11 +65,15 @@ export class MenuBarComponent implements OnInit, OnDestroy {
         this.parentItem = item;
         if(!item.children?.length) {
             this.router.navigate([item.path]);
+            if(this.deviceService.isMobile()) {
+                setTimeout(() => {                
+                    this.service.toggle();
+                }, 150);
+            }
         }
     }
 
     ngOnDestroy(): void {
         this.subscriptions.forEach(value => value.unsubscribe());
-        console.log('menu destroyed')
     }
 }

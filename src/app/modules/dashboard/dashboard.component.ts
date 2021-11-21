@@ -28,6 +28,22 @@ export class DashboardComponent implements OnInit {
         path: '/icons',
         iconURL: 'https://www.svgrepo.com/show/356320/emoji-smile.svg'
     }, {
+        name: 'Directives',
+        iconURL: 'https://www.svgrepo.com/show/356322/graph.svg',
+        children: [{
+            name: 'Click Outside',
+            iconURL: 'https://www.svgrepo.com/show/356397/arrow-right-1.svg',
+            path: '/directive/click-outside'
+        }]
+    }, {
+        name: 'Services',
+        iconURL: 'https://www.svgrepo.com/show/356364/setting.svg',
+        children: [{
+            name: 'Device',
+            iconURL: 'https://www.svgrepo.com/show/356397/arrow-right-1.svg',
+            path: '/service/device'
+        }]
+    }, {
         name: 'Layout',
         iconURL: 'https://www.svgrepo.com/show/356293/category-1.svg',
         children: [{
@@ -122,6 +138,10 @@ export class DashboardComponent implements OnInit {
             name: 'Alerts',
             iconURL: 'https://www.svgrepo.com/show/356384/volume-low.svg',
             path: '/overlay/alert'
+        }, {
+            name: 'Loaders',
+            iconURL: 'https://www.svgrepo.com/show/50491/loading.svg',
+            path: '/overlay/loader'
         }]
     }];
 
