@@ -1,8 +1,8 @@
 import { NgModule } from '@angular/core';
 import { RouterModule } from '@angular/router';
 import { MagLayoutModule } from 'src/components/layout/layout.module';
-import { UnderConstructionComponent } from './components/construction/construction.component';
-import { HomeComponent } from './components/home/home.component';
+import { UnderConstructionComponent } from './pages/construction/construction.component';
+import { HomeComponent } from './pages/home/home.component';
 
 import { DashboardComponent } from './dashboard.component';
 
