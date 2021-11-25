@@ -15,6 +15,9 @@ import { DashboardComponent } from './dashboard.component';
                 path: '',
                 component: HomeComponent,
             }, {
+                path: 'forms/buttons',
+                loadChildren: () => import('./pages/buttons/buttons.module').then(m => m.ButtonsModule)
+            }, {
                 path: '**',
                 component: UnderConstructionComponent
             }]

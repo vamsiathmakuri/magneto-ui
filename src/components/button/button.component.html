@@ -1,0 +1,13 @@
+<div class="button-container {{type}}" (click)="loaderEnabled = !loaderEnabled">
+    <div class="button-icon">
+        <div class="button-loader" *ngIf="loaderEnabled">
+            <div class="lds-ring"><div></div><div></div><div></div><div></div></div>
+        </div>
+        <div class="button-icon-src" *ngIf="!loaderEnabled && iconUrl">
+            <img [src]="iconUrl" alt="">
+        </div>
+    </div>
+    <div class="button-text" *ngIf="text">
+        {{ text }}
+    </div>
+</div>
