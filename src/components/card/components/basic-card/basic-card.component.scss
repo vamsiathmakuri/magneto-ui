@@ -1,0 +1,27 @@
+@import "../../../@themes/variables";
+@import "../../../@themes/mixins";
+
+.main-card {
+    display: flex;
+    flex-direction: column;
+
+    .card-header {
+        box-shadow: 1px 1px 5px 1px #ccc;
+        padding: 20px;
+        border: 1px solid rgba(0, 0, 0, 0.199);
+        border-radius: theme-var($--mag-border-radius);
+        z-index: 3;
+        background: theme-var($--mag-default-background);
+    }
+    
+    .card-body {
+        box-shadow: 1px 1px 5px 1px #ccc;
+        border: 1px solid rgba(0, 0, 0, 0.199);
+        border-radius: theme-var($--mag-border-radius);
+        padding: 30px 20px 20px 20px;
+        margin: 5px;
+        margin-top: -15px;
+        z-index: 1;
+        background: theme-var($--mag-default-background);
+    }
+}

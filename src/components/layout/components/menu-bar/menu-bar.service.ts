@@ -5,7 +5,7 @@ import { BehaviorSubject } from 'rxjs';
 export class MagMenuService {
     constructor() {}
 
-    menuStatus: BehaviorSubject<boolean> = new BehaviorSubject<boolean>(false);
+    menuStatus: BehaviorSubject<boolean> = new BehaviorSubject<boolean>(true);
 
     toggle() {
         this.menuStatus.next(!this.menuStatus.value)

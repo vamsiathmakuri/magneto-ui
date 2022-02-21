@@ -1,0 +1,85 @@
+@import "../../../@themes/variables";
+@import "../../../@themes/mixins";
+
+.user-card {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    margin-top: 30px;
+
+    box-shadow: 1px 1px 5px 1px #ccc;
+    border: 1px solid rgba(0, 0, 0, 0.199);
+
+    border-radius: theme-var($--mag-border-radius);
+
+    .profile-image {
+        margin-top: -30px;
+        display: flex;
+        position: relative;
+        max-height: 90%;
+        max-width: 90%;
+        img {
+            box-shadow: 1px 1px 5px 1px #ccc;
+            border-radius: theme-var($--mag-border-radius);
+            max-width: 100%;
+            max-height: 100%;
+            z-index: 1;
+            background-color: white;
+        }
+
+        &::after {
+            position: absolute;
+            border-radius: theme-var($--mag-border-radius);
+            content: '';
+            width: 100%;
+            height: 100%;
+            background: radial-gradient(circle, rgba(0,0,0,0) 0%, rgba(0,0,0,0.1) 100%);            ;
+            left: 0;
+            top: 0;
+            opacity: 0.4;
+            z-index: 2;
+            transition: opacity 0.3s;
+        }
+
+        &:hover::after {
+            opacity: 0;
+        }
+    }
+
+    .card {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+        z-index: 0;
+        padding: 10px;
+        width: 100%;
+        .name {
+            font-size: 18px;
+            font-weight: bold;
+        }
+
+        .sub-section {
+            font-size: 14px;
+            color: theme-var($--theme-text);
+            opacity: 0.7;
+        }
+
+        .more-details {
+            width: 100%;
+        }
+
+        .action {
+            user-select: none;
+            cursor: pointer;
+            padding: 10px;
+            font-size: 14px;
+            color: theme-var($--mag-primary);
+
+            &:hover {
+                text-decoration: underline;
+            }
+        }
+    }
+}

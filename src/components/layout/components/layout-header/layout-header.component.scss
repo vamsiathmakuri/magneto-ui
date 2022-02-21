@@ -137,6 +137,7 @@
             display: none;
             animation: growDown 100ms ease;
             transform-origin: top;
+            z-index: 10;
 
             &.active {
                 display: flex;
