@@ -6,6 +6,7 @@
         margin: 10px 0;
 
         .header {
+            background-color: white;
             border-radius: theme-var($--mag-border-radius);
             box-shadow: 1px 1px 5px 1px #ccc;
             display: flex;
@@ -24,6 +25,7 @@
         }
 
         .content {
+            background-color: white;
             box-shadow: inset 1px 1px 5px 1px #ccc;
             border-bottom-left-radius: theme-var($--mag-border-radius);
             border-bottom-right-radius: theme-var($--mag-border-radius);
