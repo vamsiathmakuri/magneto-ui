@@ -1,0 +1,23 @@
+<div class="tabs">
+    <div class="header">
+        <div class="tab-headers" [class.active]="selectedTab == item" (click)="selectedTab = item" *ngFor="let item of [1, 2, 3, 4, 5]">
+            Tab {{ item }}
+        </div>
+    </div>
+    <div class="content">
+        <div class="tab-content" [class.active]="selectedTab == item" *ngFor="let item of [1, 2, 3, 4, 5]">
+            <p>Content: {{ item }}</p>
+            <p>
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque faucibus ipsum quis mi ultrices, non commodo velit eleifend. Nunc eu massa id felis bibendum auctor. In pretium dolor ac mi feugiat, vitae eleifend risus condimentum. Interdum et malesuada fames ac ante ipsum primis in faucibus. Donec rhoncus ac nulla sed egestas. Vestibulum dolor risus, blandit vitae faucibus ut, pulvinar sit amet augue. Donec iaculis pretium odio. Praesent ac commodo urna, nec placerat neque. Praesent tincidunt, ligula sit amet molestie consectetur, lorem augue auctor nunc, at volutpat elit sapien eget libero.
+            </p>
+
+            <p>
+                Cras at lectus ornare, venenatis arcu nec, ultrices felis. In interdum mauris diam, at molestie libero tempus ac. Sed ipsum leo, luctus faucibus lobortis eget, lobortis eu ipsum. Ut consectetur mauris sed turpis pharetra lacinia. Sed porttitor diam massa, in scelerisque leo tristique non. Integer porta ac massa ut tincidunt. Donec vulputate, lectus vitae convallis ultrices, lorem libero dictum magna, a sollicitudin mauris mauris nec sem. Nulla gravida sem metus, a pretium risus consequat sed. Phasellus facilisis lacus dui, ac sollicitudin leo convallis eu. Fusce congue lacinia dui sit amet egestas. Pellentesque tempus dapibus rhoncus. Donec at elit ullamcorper, viverra velit non, dapibus sem. Donec ut varius quam, ac tincidunt diam. Integer consectetur dui augue, sit amet bibendum odio rhoncus eu. Phasellus ut enim ligula. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae;
+            </p>
+
+            <p>
+                Integer et leo augue. Ut a eros vehicula, imperdiet mi id, sagittis lectus. Cras varius laoreet finibus. Morbi et feugiat libero. Integer commodo aliquet nunc sed facilisis. Duis at blandit risus, quis ultricies turpis. Sed tincidunt justo tortor, nec viverra urna tincidunt quis. Maecenas porta hendrerit neque quis fermentum. Nunc velit risus, sollicitudin eget ullamcorper id, eleifend eget nisi. Nunc lobortis mi non viverra elementum. Phasellus fermentum erat lectus, sed auctor mauris efficitur blandit. Aliquam vel eleifend felis, id auctor nisl. Nullam commodo suscipit risus.
+            </p>
+        </div>
+    </div>
+</div>

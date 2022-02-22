@@ -7,7 +7,6 @@ import { Component, OnInit } from '@angular/core';
 })
 
 export class AccordionComponent implements OnInit {
-    // status: boolean = true;
     selected: number = 1;
     constructor() { }
 

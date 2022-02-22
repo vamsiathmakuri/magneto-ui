@@ -1,0 +1,41 @@
+@import "../@themes/variables";
+@import "../@themes/mixins";
+
+.tabs {
+    .header {
+        display: flex;
+        overflow: hidden;
+        border-bottom: 1px solid #ccc;
+        box-shadow: 1px 1px 5px 1px #ccc;
+        border-radius: theme-var($--mag-border-radius);
+        .tab-headers {
+            margin: 5px;
+            border-radius: theme-var($--mag-border-radius);
+            cursor: pointer;
+            padding: 10px 20px;
+            transition: border 0.2s ease-out;
+            border: 4px solid transparent;
+            &.active {
+                box-shadow: 1px 1px 5px 1px #ccc;
+                border: 4px solid var(--mag-control-activate);
+            }
+        }
+    }
+
+    .content {
+        .tab-content {
+            box-shadow: inset 1px 1px 5px 1px #ccc;
+            border-bottom-left-radius: theme-var($--mag-border-radius);
+            border-bottom-right-radius: theme-var($--mag-border-radius);
+            border: 1px solid #ccc;
+            padding: 10px 20px;
+            margin: 20px 5px;
+            margin-top: 0;
+            border-top: unset;
+            display: none;
+            &.active {
+                display: block;
+            }
+        }
+    }
+}

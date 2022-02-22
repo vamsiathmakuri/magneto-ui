@@ -118,6 +118,10 @@ export class DashboardComponent implements OnInit {
             name: 'Picker',
             iconURL: 'https://www.svgrepo.com/show/356307/column.svg',
             path: '/data/picker'
+        }, {
+            name: 'Calendar',
+            iconURL: 'https://www.svgrepo.com/show/356291/calendar.svg',
+            path: '/data/calendar'
         }]
     }, {
         name: 'Alerts & Overlays',
