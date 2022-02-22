@@ -21,6 +21,9 @@ import { DashboardComponent } from './dashboard.component';
                 path: 'layout/card',
                 loadChildren: () => import('./pages/cards/cards.module').then(m => m.CardsModule)
             }, {
+                path: 'layout/accordion',
+                loadChildren: () => import('./pages/accordions/accordions.module').then(m => m.AccordionPageModule)
+            }, {
                 path: '**',
                 component: UnderConstructionComponent
             }]

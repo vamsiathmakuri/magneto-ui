@@ -1,0 +1,19 @@
+<div class="accordion">
+    <div class="item" [class.active]="selected == item" *ngFor="let item of [1, 2, 3, 4, 5, 6, 7]">
+        <div class="header" (click)="selected = (selected == item ? -1 : item)">
+            <h3 style="margin: 0;">Header {{ item }}</h3>
+            <span class="drop-icon">
+                <img height="20px" src="https://www.svgrepo.com/show/367816/down.svg" alt="">
+            </span>
+        </div>
+        <div class="content">
+            <p>
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas vulputate ex at mollis posuere. Aliquam erat volutpat. Praesent suscipit ultrices nunc, congue aliquam leo. Nulla facilisi. Vestibulum sed blandit augue, nec eleifend risus. Suspendisse sit amet purus sapien. Donec congue, sem ut scelerisque volutpat, dui magna lacinia sapien, non feugiat nunc erat et nibh. Suspendisse varius at nibh non ultrices. Etiam a ullamcorper tortor, nec facilisis arcu. Curabitur imperdiet vulputate tincidunt.
+                <br><br>
+                Ut fringilla tempor magna at imperdiet. Phasellus porta, nunc elementum mollis sodales, tortor turpis malesuada mi, sed sollicitudin sem nisi ullamcorper tortor. Cras volutpat ut nunc a consectetur. Pellentesque eget magna in lacus lacinia dictum. Vivamus vestibulum ut neque sit amet gravida. Cras id aliquet odio. Sed molestie vehicula tincidunt. Proin quis risus magna. Aenean in finibus tortor.
+                <br><br>
+                Pellentesque non dui sit amet metus rutrum cursus venenatis quis felis. Aliquam sodales, elit ut tempor pellentesque, dolor lectus bibendum elit, non bibendum lacus ante ut quam. Cras auctor sollicitudin elit, ac pellentesque ipsum convallis id. Pellentesque vel bibendum nibh. Nam pulvinar feugiat congue. Duis scelerisque, urna vitae varius gravida, quam nisl cursus sapien, a cursus arcu risus eu ipsum. Phasellus varius, erat ac finibus auctor, magna ipsum aliquam lacus, et gravida est libero in enim. Proin condimentum egestas nisl, ac pretium velit dictum a. Pellentesque et ultricies nisi. Vestibulum vestibulum purus varius, mollis neque eget, lobortis nunc.
+            </p>
+        </div>
+    </div>
+</div>
