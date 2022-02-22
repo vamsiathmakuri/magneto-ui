@@ -38,48 +38,31 @@
     border-radius: 50%;
     box-sizing: content-box;
     border: 1px solid #4caf50;
+    background-color: #4caf50;
 
     .icon-line {
-      &::before {
+      &::before, &::after {
         height: 2px;
-        background-color: #4caf50;
+        background-color: #fff;
         border-radius: 2px;
         position: absolute;
         z-index: 10;
         content: "";
+      }
+      &::before {
         top: 10px;
-        left: 3px;
-        width: 7px;
+        left: 4px;
+        width: 6.6px;
         transform: rotate(45deg);
         animation: icon-line-tip-success 0.25s;
       }
-
       &::after {
-        height: 2px;
-        background-color: #4caf50;
-        border-radius: 2px;
-        position: absolute;
-        z-index: 10;
-        content: "";
         top: 9px;
         left: 7px;
-        width: 11px;
+        width: 10px;
         transform: rotate(-45deg);
         animation: icon-line-long-success 0.25s;
       }
-    }
-
-    &::before {
-      content: "";
-      top: -2px;
-      left: -2px;
-      z-index: 10;
-      width: 20px;
-      height: 20px;
-      border-radius: 50%;
-      position: absolute;
-      box-sizing: content-box;
-      border: 2px solid rgba(76, 175, 80, 0.5);
     }
   }
 }
@@ -92,8 +75,8 @@
   }
   100% {
     top: 10px;
-    left: 3px;
-    width: 7px;
+    left: 4px;
+    width: 6.6px;
   }
 }
 
@@ -106,7 +89,7 @@
   100% {
     top: 9px;
     left: 7px;
-    width: 11px;
+    width: 10px;
   }
 }
 
@@ -122,16 +105,19 @@
     border-radius: 50%;
     box-sizing: content-box;
     border: 1px solid #f27474;
+    background-color: #f27474;
 
     .icon-line {
-      &::before {
+      &::before, &::after {
         height: 2px;
-        background-color: #f27474;
+        background-color: #fff;
         border-radius: 2px;
         position: absolute;
         z-index: 10;
         content: "";
+      }
 
+      &::before {
         top: 9px;
         left: 3px;
         width: 14px;
@@ -140,31 +126,12 @@
       }
 
       &::after {
-        height: 2px;
-        background-color: #f27474;
-        border-radius: 2px;
-        position: absolute;
-        z-index: 10;
-        content: "";
         top: 9px;
         left: 3px;
         width: 14px;
         transform: rotate(-45deg);
         animation: icon-line-long-fail 0.25s;
       }
-    }
-
-    &::before {
-      content: "";
-      top: -2px;
-      left: -2px;
-      z-index: 10;
-      width: 20px;
-      height: 20px;
-      border-radius: 50%;
-      position: absolute;
-      box-sizing: content-box;
-      border: 2px solid #f2747480;
     }
   }
 }
@@ -191,6 +158,7 @@
     width: 1px;
     transform: rotate(0);
   }
+  
   100% {
     top: 9px;
     left: 3px;
