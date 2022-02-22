@@ -1,130 +1,88 @@
 @import "../@themes/variables";
 @import "../@themes/mixins";
+@import "./button-animations";
 
 .button-container {
-    width: inherit;
-    border-radius: theme-var($--mag-border-radius);
-    opacity: 80%;
-    box-shadow: 1px 1px 5px 1px #ccc;
-    user-select: none;
-    cursor: pointer;
+  width: inherit;
+  border-radius: theme-var($--mag-border-radius);
+  opacity: 90%;
+  box-shadow: 1px 1px 5px 1px #ccc;
+  user-select: none;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 10px;
+
+  .button-icon {
     display: flex;
     align-items: center;
-    justify-content: center;
-    padding: 10px;
 
-    .button-icon {
-        display: flex;
-        align-items: center;
-
-        .button-loader {
-            display: flex;
-        }
-
-        .button-icon-src {
-            display: flex;
-            img {
-                width: 22px;
-                height: 22px;
-            }
-        }
+    .button-icon-src {
+      display: flex;
+      img {
+        width: 22px;
+        height: 22px;
+      }
     }
+  }
 
-    .button-text {
-        text-align: center;
-        padding: 0 10px;
+  .button-text {
+    text-align: center;
+    padding: 0 10px;
+  }
+
+  &.solid {
+    border: 1px solid rgba(0, 0, 0, 0.199);
+    background: theme-var($--mag-primary);
+    color: #fff; // Todo
+
+    .lds-ring {
+      div {
+        border: 2px solid #fff;
+        border-color: #fff transparent transparent transparent;
+      }
     }
+  }
 
-    &.solid {
-        border: 1px solid rgba(0, 0, 0, 0.199);
-        background: theme-var($--mag-primary);
-        color: #fff; // Todo
+  &.outline {
+    border: 2px solid theme-var($--mag-primary);
+    color: theme-var($--mag-primary); // Todo
+  }
 
-        .lds-ring {
-            div {
-                border: 2px solid #fff;
-                border-color: #fff transparent transparent transparent;
-            }
-        }
-    }
+  &.light {
+    border: 1px solid rgba(0, 0, 0, 0.199);
+    color: theme-var($--mag-primary); // Todo
+    background: #0073de27;
+  }
 
-    &.outline {
-        border: 2px solid theme-var($--mag-primary);
-        color: theme-var($--mag-primary); // Todo
-    }
-
-    &.light {
-        border: 1px solid rgba(0, 0, 0, 0.199);
-        color: theme-var($--mag-primary); // Todo
-        background: #0073de27;
-    }
-
-    &.link {
-        box-shadow: unset;
-        text-decoration: underline;
-        color: theme-var($--mag-primary);
-
-        &:hover {
-            box-shadow: unset;
-        }
-    }
-
-    &.ghost {
-        color: theme-var($--mag-primary); // Todo
-        box-shadow: unset;
-        
-        &:hover {
-            background: #0073de27;
-            box-shadow: unset;
-        }
-    }
+  &.link {
+    box-shadow: unset;
+    text-decoration: underline;
+    color: theme-var($--mag-primary);
 
     &:hover {
-        opacity: 100%;
-        box-shadow: 1px 1px 5px 3px #ccc;
+      box-shadow: unset;
     }
+  }
 
-    &.disabled {
-        opacity: 40%;
-        cursor: not-allowed;
+  &.ghost {
+    color: theme-var($--mag-primary); // Todo
+    box-shadow: unset;
+
+    &:hover {
+      background: #0073de27;
+      box-shadow: unset;
     }
+  }
+
+  &:hover {
+    opacity: 100%;
+    box-shadow: 1px 1px 5px 3px #ccc;
+  }
+
+  &.disabled {
+    opacity: 40%;
+    cursor: not-allowed;
+  }
 }
-
-// Loader
-
-.lds-ring {
-    display: inline-block;
-    position: relative;
-    width: 16px;
-    height: 16px;
-    margin: 3px;
-  }
-  .lds-ring div {
-    box-sizing: border-box;
-    display: block;
-    position: absolute;
-    width: 16px;
-    height: 16px;
-    border-radius: 50%;
-    animation: lds-ring 1.2s cubic-bezier(0.5, 0, 0.5, 1) infinite;
-    border: 2px solid theme-var($--mag-primary);
-    border-color: theme-var($--mag-primary) transparent transparent transparent;
-  }
-  .lds-ring div:nth-child(1) {
-    animation-delay: -0.45s;
-  }
-  .lds-ring div:nth-child(2) {
-    animation-delay: -0.3s;
-  }
-  .lds-ring div:nth-child(3) {
-    animation-delay: -0.15s;
-  }
-  @keyframes lds-ring {
-    0% {
-      transform: rotate(0deg);
-    }
-    100% {
-      transform: rotate(360deg);
-    }
-  }
-  

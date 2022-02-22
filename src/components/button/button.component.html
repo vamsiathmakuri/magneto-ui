@@ -1,9 +1,14 @@
-<div class="button-container {{type}}" (click)="loaderEnabled = !loaderEnabled">
+<div class="button-container {{type}}" (click)="buttonClick()">
     <div class="button-icon">
-        <div class="button-loader" *ngIf="loaderEnabled">
-            <div class="lds-ring"><div></div><div></div><div></div><div></div></div>
+        <div class="button-loader" 
+            [class.spinner]="loaderEnabled" 
+            [class.success-checkmark]="successEnabled"
+            [class.fail-checkmark]="failEnabled">
+            <div class="check-icon">
+              <span class="icon-line"></span>
+            </div>
         </div>
-        <div class="button-icon-src" *ngIf="!loaderEnabled && iconUrl">
+        <div class="button-icon-src" *ngIf="!loaderEnabled && !successEnabled && !failEnabled && iconUrl">
             <img [src]="iconUrl" alt="">
         </div>
     </div>

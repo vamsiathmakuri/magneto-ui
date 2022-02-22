@@ -11,6 +11,23 @@ export class MagButtonComponent implements OnInit {
     @Input('buttonText') text: string = '';
     
     loaderEnabled: boolean = false;
+    successEnabled: boolean = false;
+    failEnabled: boolean = false;
+
     constructor() { }
     ngOnInit() { }
+
+    buttonClick() {
+        this.loaderEnabled = true;
+        this.successEnabled = false;
+        this.failEnabled = false;
+        setTimeout(() => {
+            this.loaderEnabled = false;
+            if (Math.ceil(Math.random()*100) % 2 == 0) {
+                this.successEnabled = true;
+            } else {
+                this.failEnabled = true;
+            }
+        }, 3000);
+    }
 }
